@@ -21,51 +21,59 @@
     <div class="right">
 
         <div class="top">
-            <p class="top_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque possimus explicabo. Officia eius earum ex unde illum ad dignissimos sit deserunt illo, placeat corrupti iure. Vero delectus velit provident.</p>
+            <div class="top_txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore doloremque possimus explicabo. Officia eius earum ex unde illum ad dignissimos sit deserunt illo, placeat corrupti iure. Vero delectus velit provident.</p>
+                <p>You <em>know</em> you want to.</p>
+            </div>
         </div>
 
         <div class="middle">
-            <h1>Let's do this!</h1>
+            <h1 class="lets">Let's do this!</h1>
 
             <form action="#" class="form">
-            <div>
+            <div class="input">
                 <label for="first_name">First Name</label>
                 <input type="text" id="first_name"/>
             </div>
 
-            <div>
+            <div class="input">
                 <label for="last_name">Last Name</label>
-                <input type="text" id="last_name"/>
+                <input type="text" id="last_name"/> 
             </div>
             
-            <div>
+            <div class="input"> 
                 <label for="email">Email</label>
                 <input type="email" id="email"/>
             </div>
 
-            <div>
+            <div class="input">
                 <label for="phone">Phone Number</label>
                 <input type="number" id="phone"/>
             </div>
 
-            <div>
+            <div class="input">
                 <label for="password">Password</label>
                 <input type="password" id="password"/>
+                <div id='password-error' class='error'></div>
             </div>
 
-            <div>
+            <div class="input">
                 <label for="confirm_password">Confirm Password</label>
                 <input type="password" id="confirm_password"/>
+                <div id='passwordC-error' class='error'></div>
             </div>
             </form>
         </div>
 
         <div class="bottom">
             <button class="btn">Create Account</button>
-            <p>Already have an account? <a href="#">Log in</a></p>
+            <p>Already have an account? <a href="#"><strong>Log in</strong></a></p>
         </div>
 
     </div>
 </div>
 </body>
+<script src="index.js">
+    
+</script>
 </html>

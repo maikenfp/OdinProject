@@ -48,13 +48,29 @@ body {
 
 .btn {
     background-color: #596D48;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 20px;
 }
 
 .right {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-flow: column nowrap;
+    justify-content: center;
     background-color: lightgray;
+}
+
+.top_txt {
+    font-weight: 500;
+    width: 90%;
+    font-size: 1.2rem;
+}
+
+.top_txt p {
+    margin: 30px 0;
 }
 
 .top, .bottom, .middle{
@@ -66,14 +82,23 @@ body {
     height: 300px;
 }
 
-.right input {
+.form input {
     border: 0.5px solid #E5E7EB;
     display: block;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 6px;
+    text-transform: uppercase;
 }
 
-.right input:focus {
+.form input:focus {
     border: 0.5px solid rgb(179, 236, 255);
     box-shadow: 2px 4px 8px #888888;
+}
+
+.form input[type="number"]{
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
 }
 
 .form {
@@ -82,6 +107,16 @@ body {
     gap: 20px;
 }
 
-.bottom {
-    align-items: start;
+.lets {
+    margin-bottom: 20px;
+}
+
+.bottom a{
+    text-decoration: none;
+    color: #596D48;
+}
+
+.error {
+    margin-top: 10px;
+    color: red;
 }
