@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100&family=Roboto:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+}
+
+.container {
+    border: 1px solid black;
+    margin: 200px auto;
+    width: 350px;
+    border-radius: 10px;
+    background-color: darkgrey;
+}
+
+.displaypanel {
+    border: 1px solid black;
+    height: 70px;
+    margin: 40px;
+    padding: 20px;
+    text-align: right;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.top{
+    display: flex;
+    margin: 0 10px;
+    gap: 5px;
+}
+
+.clear, .delete {
+    width: 50%;
+}
+
+.number, .operator, .equal, .clear, .delete {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
+    margin: 10px;
+}
+
+.number:hover, .operator:hover, .equal:hover, .clear:hover, .delete:hover {
+    transform: scale(1.05);
+}
+
+.delete {
+    background-color: #E35335;
+}
+
+.clear {
+    background-color: #A7C7E7;
+}
