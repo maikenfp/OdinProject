@@ -17,12 +17,19 @@
 
 .displaypanel {
     border: 1px solid black;
-    height: 70px;
+    height: auto;
     margin: 40px;
     padding: 20px;
     text-align: right;
     border-radius: 10px;
     background-color: white;
+}
+
+#prev_display, #display {
+    padding: 10px;
+    height: 40px;
+    font-size: 2em;
+    text-align: right;
 }
 
 .top{

@@ -7,8 +7,8 @@
 
 
 //Functionality
-let firstOperand = ''
-let secondOperand = ''
+let prevOperand = ''
+let currentOperand = ''
 let currentOperation = null
 const number = document.querySelectorAll('.number');
 const op = document.querySelectorAll('.operator');
@@ -16,17 +16,20 @@ const display = document.getElementById('display');
 const prevdisplay = document.getElementById('prev_display');
 const clear = document.querySelector('.clear');
 const equalbtn = document.querySelector('.equal');
+const del = document.querySelector('.delete');
 
 //Update display
 function updateDisplay(){
-    display.textContent = firstOperand;
-    if(secondOperand !== '' && currentOperation !== null){
-        prevdisplay.textContent = secondOperand + " " + currentOperation;
+    display.textContent = prevOperand;
+    if(currentOperand !== '' && currentOperation !== null){
+        prevdisplay.textContent = currentOperand + " " + currentOperation + " " + prevOperand;
     }
 }
 
+// Append number
 function appendNumber(number){
-    firstOperand += number
+    if(number === '.' && prevOperand.includes('.')) return
+    prevOperand += number
 }
 
 //Round the total number
@@ -37,19 +40,13 @@ function roundResult(number) {
 //Set and store the chosen operation
 function setOperation(op) {
     if(currentOperation === '') return
-    if(secondOperand !== ''){
+    if(currentOperand !== ''){
         operator()
     }
     currentOperation = op;
-    secondOperand = firstOperand;
-    firstOperand = ''
+    currentOperand = prevOperand;
+    prevOperand = ''
 }
-
-// function clearScreen() {
-//     firstOperand = ''
-//     secondOperand = ''
-//     currentOperation = null
-// }
 
 //When a number is pressed, send value to update display
 number.forEach(btn => {
@@ -73,15 +70,23 @@ op.forEach(btn => {
 });
 
 function clearScreen() {
-    firstOperand = ''
-    secondOperand = ''
+    prevOperand = ''
+    currentOperand = ''
     currentOperation = null
     display.textContent = ''
     prevdisplay.textContent = ''
 }
 
+//When equal button is pressed, calculate operation
 equalbtn.addEventListener('click', () => {
     operator()
+    updateDisplay()
+})
+
+//Delete btn
+
+del.addEventListener('click', () => {
+    prevOperand = prevOperand.toString().slice(0, -1);
     updateDisplay()
 })
 
@@ -108,8 +113,14 @@ function divide(a, b) {
 
 function operator() {
     let computation
-    let a = Number(secondOperand)
-    let b = Number(firstOperand)
+    let a = Number(currentOperand)
+    let b = Number(prevOperand)
+
+    if(prevOperand === '' || currentOperand === ''){
+        alert('You must specify two numbers and an operation')
+        clearScreen()
+    }
+
     switch(currentOperation){
         case '+':
             computation = add(a, b)
@@ -127,8 +138,8 @@ function operator() {
             return
     }
 
-    firstOperand = computation
+    prevOperand = computation
     currentOperation = null
-    secondOperand = ''
+    currentOperand = ''
 }
 
