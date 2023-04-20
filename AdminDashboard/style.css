@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100&family=Roboto:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+.aside_container, .header_container, .main_container {
+    border: 1px solid black;
+    
+}
+
+.super_container {
+    display: grid;
+    grid-template-areas: 
+    'aside header header'
+    'aside main main';
+}
+
+.aside_container {
+    grid-area: aside;
+    width: 20vw;
+}
+
+.header_container {
+    grid-area: header;
+}
+
+.main_container {
+    grid-area: main;
+}
+
+.main_grid{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+    'projects announcement'
+    'projects trending';
+}
+
+.projects {
+    grid-area: projects;
+    padding: 100px;
+}
+
+.announcements {
+    grid-area: announcement;
+    font-size: 0.9em;
+    padding-top: 100px;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.projects ul{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+}
+
+.main_header {
+    display: grid;
+    grid-template-columns: 75% 100px 100px 100px;
+}

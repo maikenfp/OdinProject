@@ -1,7 +1,6 @@
-/*
-1. Første tall må lagres og dukke opp på skjermen
-2. Må lagre hvilken operasjon som blir valgt
-3. Må lagre andre tall og sende videre alt til utregning og så oppdatere skjerm
+/* FIX
+Delete sletter sluttresultatet
+Etter man trykker =, og fortsetter å skrive tall vil det legges til summen 
 */
 
 
@@ -34,7 +33,7 @@ function appendNumber(number){
 
 //Round the total number
 function roundResult(number) {
-    return Math.round(number * 1000) / 1000
+    return Math.round(number * 100) / 100
 }
 
 //Set and store the chosen operation
@@ -123,16 +122,16 @@ function operator() {
 
     switch(currentOperation){
         case '+':
-            computation = add(a, b)
+            computation = roundResult(add(a, b))
             break
         case '-':
-            computation = subtract(a, b)
+            computation = roundResult(subtract(a, b))
             break
         case '*':
-            computation = multiply(a, b)
+            computation = roundResult(multiply(a, b))
             break
         case '/':
-            computation = divide(a, b)
+            computation = roundResult(divide(a, b))
             break
         default:
             return

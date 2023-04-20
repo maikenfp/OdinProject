@@ -7,18 +7,25 @@
     font-size: 1em;
 }
 
+body {
+    background-image: url('https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=742&q=80');
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .container {
-    border: 1px solid black;
+    border: 1px solid white;
     margin: 200px auto;
+    padding: 50px;
     width: 350px;
     border-radius: 10px;
-    background-color: darkgrey;
+    background-image: url('https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1756&q=80');
 }
 
 .displaypanel {
     border: 1px solid black;
     height: auto;
-    margin: 40px;
+    margin: 30px auto;
     padding: 20px;
     text-align: right;
     border-radius: 10px;
@@ -26,16 +33,17 @@
 }
 
 #prev_display, #display {
+    word-wrap: break-word;
     padding: 10px;
-    height: 40px;
+    height: auto;
     font-size: 2em;
     text-align: right;
 }
 
 .top{
     display: flex;
-    margin: 0 10px;
     gap: 5px;
+    margin: 10px auto;
 }
 
 .clear, .delete {
@@ -53,7 +61,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 5px;
-    margin: 10px;
 }
 
 .number:hover, .operator:hover, .equal:hover, .clear:hover, .delete:hover {
