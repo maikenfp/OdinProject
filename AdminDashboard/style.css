@@ -13,11 +13,6 @@ li {
     list-style: none;
 }
 
-.aside_container, .header_container, .main_container {
-    border: 1px solid black;
-    
-}
-
 .super_container {
     display: grid;
     grid-template-areas: 
@@ -28,14 +23,98 @@ li {
 .aside_container {
     grid-area: aside;
     width: 20vw;
+    background-color: rgb(71, 147, 217);
+    font-weight: bold;
+    color: white;
+}
+
+.aside_container aside {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 26px;
+}
+
+.personal, .settings {
+    margin: 30px 20px 30px 20px;
+    font-size: 25px;
+}
+
+.personal ul li, .settings ul li {
+margin: 15px 0;
 }
 
 .header_container {
     grid-area: header;
+    margin: 20px;
+}
+
+.logo, .top_header, .bottom_header, .header_container ul, .top_header_right, .top_header_left, .bottom_header_left, .bottom_header_right{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.bottom_header_right button, .top_header button {
+    margin-right: 40px;
+    height: 40px;
+}
+
+.top_header_right, .bottom_header_right{
+    margin-left: auto;
+}
+
+.bottom_header button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    background-color: rgb(71, 147, 217);
+    color: white;
+    border: none;
+    border-radius: 30px;
+}
+
+.searchbtn {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3917/3917754.png');
+    background-size: cover;
+    background-color: white;
+    border: none;
+    width: 40px;
+}
+
+.bellbtn {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/02/84/72/10/1000_F_284721011_Tj3pVZTbUxh1Emuaeo5n1Ei0kq4wFjLY.jpg');
+    background-size: cover;
+    background-color: white;
+    border: none;
+    width: 40px;
+}
+
+.profile_picture {
+    height: 80px;
+    border-radius: 50%;
+}
+
+.searchbar {
+    width: 700px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: #cbd5e1;
+}
+
+.dashboard_logo {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
 }
 
 .main_container {
     grid-area: main;
+    background-color: #cbd5e1;
+    padding: 20px;
 }
 
 .main_grid{
@@ -46,27 +125,52 @@ li {
     'projects trending';
 }
 
-.projects {
-    grid-area: projects;
-    padding: 100px;
-}
-
 .announcements {
     grid-area: announcement;
-    font-size: 0.9em;
-    padding-top: 100px;
+    margin: 0 20px;
+}
+
+.announcements li{
+    padding: 20px;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.announcements ul, .trending ul, .projects li {
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px;
 }
 
 .trending {
     grid-area: trending;
+    margin: 0 20px;
+}
+
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-areas: 
+    'headline',
+    'project';
+    align-content: start; 
 }
 
 .projects ul{
+    grid-area: project;
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    
 }
 
-.main_header {
-    display: grid;
-    grid-template-columns: 75% 100px 100px 100px;
+.projects h1 {
+    grid-area: headline;
+}
+
+.projects li{
+    border-left: 10px solid #6366f1;
+    padding: 20px;
+}
+
+.projects li, .trending ul, .announcements ul{
+    background-color: white;
 }

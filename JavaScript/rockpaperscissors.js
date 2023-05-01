@@ -1,102 +1,83 @@
-function computerPlay() {
+let playerCount = 0;
+let computerCount = 0;
+let roundCount = 0;
+let rock = document.getElementById("rock").addEventListener("click",() => handleClick("rock"));
+let paper = document.getElementById("paper").addEventListener("click", () => handleClick("paper"));
+let scissors = document.getElementById("scissors").addEventListener("click", () => handleClick("scissors"));
+let playerScore = document.getElementById("playerscore"); 
+let computerScore = document.getElementById("computerscore");
+let result = document.getElementById("result");
+let youPicked = document.getElementById("youPicked");
+let computerPicked = document.getElementById("computerPicked");
 
-    const arr = ["rock", "paper", "scissor"];
-    return arr[Math.floor(Math.random()*arr.length)];
-
+function getComputerChoice(){
+    const arr = ["rock", "paper", "scissors"]
+    return arr[Math.floor(Math.random() * arr.length)];
 }
 
-<<<<<<< Updated upstream
-function singleRound(playerSelection, computerSelection){
-=======
-let playernum = 0;
-let compnum = 0;
-const playerScore = document.querySelector('.playerscore');
-const computerScore = document.querySelector('.computerscore');
-
-function restart() {
-    playernum = 0;
-    compnum = 0;
-    playerScore.innerHTML = "0";
-    computerScore.innerHTML = "0";
-    return document.querySelector('.roundover').innerHTML = "Round over!";
+function handleClick(playerSelection){
+    let computerSelection = getComputerChoice();
+    game(playerSelection, computerSelection);
 }
 
+function game(playerSelection, computerSelection) {
+    playRound(playerSelection, computerSelection);
 
-function playRound(playerSelection, computerSelection){
->>>>>>> Stashed changes
-
-    const player = playerSelection.toLowerCase();
-
-    if(player === "rock" && computerSelection === "scissor"){
-        ++playernum;
-        updateScore(playerScore, playernum, compnum);
-        return "Computer loses! Rock beats scissor";
-    } else if (player === "scissor" && computerSelection === "paper"){
-        ++playernum;
-        updateScore(playerScore, playernum, compnum);
-        return "Computer loses! Scissor beats paper";
-    } else if(player === "paper" && computerSelection === "rock") {
-        ++playernum;
-        updateScore(playerScore, playernum, compnum);
-        return "Computer loses! Paper beats rock";
-    } else if(player === computerSelection){
-        return "Draw!";
-    } 
-    else {
-        ++compnum;
-        updateScore(computerScore, playernum, compnum);
-        return "Computer wins!";
-    }
-
+        /*if(playerCount > computerCount){
+            return "You won!";
+        } else if(playerCount == computerCount){
+            return "Draw";
+        } else {
+            return "You lost!";
+        }*/
 }
 
-<<<<<<< Updated upstream
-function game() {
-=======
-function updateScore(player, num, compnum) {
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
 
-    if(num === 5 || compnum === 5){
-        restart();
-    } else if(player === playerScore){
-        playerScore.innerHTML = num;
-    } else {
-        computerScore.innerHTML = compnum;
-    }
-}
+    youPicked.innerHTML = "You picked: " + playerSelection;
+    computerPicked.innerHTML = "Computer picked: " + computerSelection;
 
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissor = document.querySelector('.scissor');
+    roundCount++;
 
-const arr = [rock, paper, scissor];
-
-arr.forEach(choice => choice.addEventListener('click', function(e){
-    document.querySelector('.roundover').innerHTML = '';
-    const value = e.target.innerHTML;
-    p.innerHTML = playRound(value, computerPlay());
-}));
-
-const div = document.querySelector('.score');
-const p = document.createElement('p');
-div.appendChild(p);
-
-
-// rock.addEventListener('click', function(e){
-//     const value = e.target.innerHTML;
-//     score.innerHTML = playRound(value, computerPlay());
-// });
->>>>>>> Stashed changes
-
-    for(let i = 0; i <= 5; i++){
-        let x = prompt("Enter rock, paper or scissor");
-        console.log(singleRound(x, computerPlay()));
+    if(playerSelection == "rock" && computerSelection == "paper"){
+        ++computerCount;
+        computerScore.innerHTML = "Computers score: " + computerCount;
+        result.innerHTML = "You lose, paper beats rock"; 
+        return;
+    } else if(playerSelection == "rock" && computerSelection == "scissors"){
+        ++playerCount;
+        playerScore.innerHTML = "Your score: " + playerCount;
+        result.innerHTML = "You win, rock beats scissors";
+        return;
+    } else if(playerSelection == "scissors" && computerSelection == "rock"){
+        ++computerCount;
+        computerScore.innerHTML = "Computers score: " + computerCount;
+        result.innerHTML = "You lose, rock beats scissors";
+        return;
+    } else if(playerSelection == "scissors" && computerSelection == "paper"){
+        ++playerCount;
+        playerScore.innerHTML = "Your score: " + playerCount;
+        result.innerHTML = "You win, scissors beats paper";
+        return;
+    } else if(playerSelection == "paper" && computerSelection == "scissors"){
+        ++computerCount;
+        computerScore.innerHTML = "Computers score: " + computerCount;
+        result.innerHTML = "You lose, scissors beats paper";
+        return;
+    } else if(playerSelection == "paper" && computerSelection == "rock"){
+        ++playerCount;
+        playerScore.innerHTML = "Your score: " + playerCount;
+        result.innerHTML = "You win, paper beats rock";
+        return;
+    } else if(playerSelection == computerSelection){
+        result.innerHTML = "Draw";
     }
 }
 
-// const rock = "rock";
-// const computer = computerPlay();
-// console.log(rock);
-// console.log(computer);
-// console.log(singleRound(rock, computer));
-game();
-
+function restart(){
+    roundCount = 0;
+    playerCount = 0;
+    computerCount = 0;
+}
