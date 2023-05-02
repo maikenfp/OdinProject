@@ -1,0 +1,23 @@
+.drop_down {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.animation {
+    animation: 3s btn-change infinite alternate;
+}
+
+@keyframes btn-change {
+    from {
+        background-color: blueviolet;
+    } 
+    50% {
+        background-color: green;
+    }
+    to {
+        background-color: antiquewhite;
+    }
+}
