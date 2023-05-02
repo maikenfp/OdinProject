@@ -5,10 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"> 
     <title>Portfolio</title>
 </head>
 <body>
-    
+    <div class="main_container">
+
+        <div class="header">
+            <div class="header_content">
+                <div><h1>My Portfolio</h1></div>
+                <div><button><a href="#main">Check out my work!</a></button></div>
+            </div>
+        </div>
+
+        <div id="main">
+            <nav class="main_navbar">
+                <ul>
+                    <li id="projects_btn" onclick="switchTab('projects')">Projects</li>
+                    <li id="about_me_btn" onclick="switchTab('about_me')">About me</li>
+                </ul>
+            </nav>
+
+            <div id="projects" class="tab_switch">
+                    <div class="project">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="project_picture" class="project_picture">
+                        <h1>Project name</h1>
+                        <a href="https://github.com/maikenfp/OdinProject"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="github_icon" /></a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quisquam velit deserunt et corporis rerum esse asperiores neque natus cum adipisci at, temporibus saepe porro obcaecati repellat explicabo. Laboriosam, error.</p>
+                    </div>
+                    <div class="project">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="project_picture" class="project_picture">
+                        <h1>Project name</h1>
+                        <a href="https://github.com/maikenfp/OdinProject"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="github_icon" /></a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quisquam velit deserunt et corporis rerum esse asperiores neque natus cum adipisci at, temporibus saepe porro obcaecati repellat explicabo. Laboriosam, error.</p>
+                    </div>
+                    <div class="project">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="project_picture" class="project_picture">
+                        <h1>Project name</h1>
+                        <a href="https://github.com/maikenfp/OdinProject"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="github_icon" /></a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quisquam velit deserunt et corporis rerum esse asperiores neque natus cum adipisci at, temporibus saepe porro obcaecati repellat explicabo. Laboriosam, error.</p>
+                    </div>
+                    <div class="project">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="project_picture" class="project_picture">
+                        <h1>Project name</h1>
+                        <a href="https://github.com/maikenfp/OdinProject"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="github_icon" /></a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quisquam velit deserunt et corporis rerum esse asperiores neque natus cum adipisci at, temporibus saepe porro obcaecati repellat explicabo. Laboriosam, error.</p>
+                    </div>
+            </div>
+
+            <div id="about_me" class="tab_switch">
+                <div class="about_me_content">
+                    <h1>About me</h1>
+                    <p>Sweet girl Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur similique, quisquam tempora est rem facere veritatis! Similique iure nobis odio corrupti ullam ea ipsa minima praesentium in, nemo alias voluptates.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
