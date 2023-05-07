@@ -1,0 +1,67 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1em;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background-image: url(rps.jpg);
+    background-size: cover;
+}
+
+button {
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(216, 216, 216);
+}
+
+.playerSelection {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 20px;
+}
+
+.playerSelection:hover, #restart:hover {
+    cursor: pointer;
+}
+
+#rock {
+    background-image: url(rock.png);
+}
+
+#paper {
+    background-image: url(paper.png);
+}
+
+#scissors {
+    background-image: url(scissor.webp);
+}
+
+.score_content > *, .container > * {
+    margin: 20px;
+}
+
+.score_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_content > * {
+    background-color: rgb(216, 216, 216);
+    width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+}

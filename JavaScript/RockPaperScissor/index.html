@@ -8,15 +8,42 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissor</button>
-    <div id="youPicked"></div>
-    <div id="computerPicked"></div>
-    <div id="result"></div>
-    <div id="playerscore">Your score: 0</div>
-    <div id="computerscore">Computers score: 0</div>
-    <button id="restart" onclick="restart()">Restart</button>
+    <div class="container">
+        <div class="rps-buttons">
+            <button id="rock" class="playerSelection"></button>
+            <button id="paper" class="playerSelection"></button>
+            <button id="scissors" class="playerSelection"></button>
+        </div>
+        <div class="score_content">
+        <div>
+            <h1>You picked:</h1>
+            <div id="youPicked" class="reset_stats"></div>
+        </div>
+
+        <div>
+            <h1>Computer picked:</h1>
+            <div id="computerPicked" class="reset_stats"></div>
+        </div>
+
+        <div>
+            <h1>Round result:</h1>
+            <div id="result" class="reset_stats"></div>
+        </div>
+
+        <div>
+            <h1>Your score:</h1>
+            <div id="playerscore" class="reset_stats"></div>
+        </div>
+
+        <div>
+            <h1>Computers score:</h1>
+            <div id="computerscore" class="reset_stats"></div>
+        </div>
+        </div>
+        <div class="restartBtn"> 
+            <button id="restart" onclick="restartGame()">Restart</button>
+        </div>
+    </div>
 </body>
 <script src="rockpaperscissors.js">
 
