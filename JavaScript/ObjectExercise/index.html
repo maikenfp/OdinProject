@@ -12,13 +12,13 @@
         <button id="showForm">New Book</button>
         <form id="form">
             <label for="title">Enter Title</label>
-            <input type="text" id="title">
+            <input type="text" id="title" maxlength="80">
 
             <label for="author">Enter Author</label>
-            <input type="text" id="author">
+            <input type="text" id="author" maxlength="80">
 
             <label for="pages">Enter number of pages</label>
-            <input type="text" id="pages">
+            <input type="number" id="pages">
 
             <input type="button" value="submit" onclick="addBookToLibrary()">
         </form>

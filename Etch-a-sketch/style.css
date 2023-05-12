@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+#maincontainer {
+    max-width: 1200px;
+    max-height: 1200px;
+    display: grid;
+    gap: 10px;
+}
+
+#maincontainer > div {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#grid_btn {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin: 20px 700px;
+}

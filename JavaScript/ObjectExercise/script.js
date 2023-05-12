@@ -5,7 +5,7 @@ let transformers = new Book('transformers', "hey", 5230, true);
 let showForm = document.getElementById("showForm");
 let library = [hobbit, lotr, transformers];
 
-refresh();
+render();
 
 showForm.addEventListener("click", () => {
     let form = document.getElementById("form");
@@ -23,47 +23,50 @@ function Book (title, author, pages, read) {
     }
 }
 
-//Adding a book to the library
 function addBookToLibrary(){
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
 
     library.push(new Book(title, author, pages, false));
-    refresh();
+    render();
 }
 
-//attaching remove function to each remove button
-let removeFunc = document.querySelectorAll(".remove");
-    removeFunc.forEach(button => {
-        button.addEventListener('click', () => {
-            remove(button.id);
-        });
-    })
+function render(){
+    const allBooks = document.querySelectorAll('.book');
+    let ul = document.getElementById("booklist");
 
-//remove book from list
-function remove(title) {
-    for (let i = library.length - 1; i >= 0; --i) {
-        if (library[i].title == title) {
-            library.splice(i,1);
-        }
+    allBooks.forEach(book => ul.removeChild(book));
+    for(let i = 0; i < library.length; i++){
+        createBook(library[i]);
     }
-    refresh();
 }
 
-function refresh() {
-    library.map(book => {
-        let li = document.createElement("li");
-        li.textContent = book.info();
+function createBook(item) {
 
-        let remove = document.createElement("button");
-        remove.setAttribute('class', 'remove');
-        remove.setAttribute('id', book.title);
-        remove.textContent = "Remove";
+    const ul = document.getElementById("booklist");
+    const li = document.createElement("li");
+    const remove = document.createElement("button");
+    const titleDiv = document.createElement("div");
+    const pageDiv = document.createElement("div");
+    const authorDiv = document.createElement("div");
 
-        li.appendChild(remove);
+    li.setAttribute('class', 'book');
+    titleDiv.textContent = item.title;
+    pageDiv.textContent = `By: ${item.author}`;
+    authorDiv.textContent = `Pages: ${item.pages}`;
+    remove.setAttribute('class', 'remove');
+    remove.setAttribute('id', library.indexOf(item));
+    remove.textContent = "Remove";
 
-        let ul = document.getElementById("booklist");
-        ul.appendChild(li);
+    remove.addEventListener('click', () => {
+        library.splice(library.indexOf(item), 1);
+        render();
     })
+
+    li.appendChild(titleDiv);
+    li.appendChild(pageDiv);
+    li.appendChild(authorDiv);
+    li.appendChild(remove);
+    ul.appendChild(li);
 }
